@@ -1,0 +1,130 @@
+.header {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  position: fixed;
+  background-color: #E5E5E5;
+  z-index: 4;
+  box-shadow: 0 1.8px 2.2px rgba(0, 0, 0, 0.034),
+              0 3.7px 5.3px rgba(0, 0, 0, 0.048),
+              0 6.5px 10px rgba(0, 0, 0, 0.06),
+              0 11.3px 17.9px rgba(0, 0, 0, 0.072),
+              0 20.8px 33.4px rgba(0, 0, 0, 0.086),
+              0 20px 80px rgba(0, 0, 0, 0.12);
+  @include responsive-page(desktop) {
+      padding: 40px 20px;
+  }
+  &__container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logo {
+    width: 70%;
+    justify-content: center;
+    align-items: center;
+    &__img {
+      justify-content: center;
+    }
+    @include responsive-page(md){
+      padding-left: 15%;
+    }
+    @include responsive-page(desktop) {
+      width: 40%;
+    }
+  }
+  .navbar {
+    display: none;
+    width: 100%;
+    justify-content: center;
+    padding-top: 25%;
+    &--shown {
+      display: flex;
+      height: 100vh;
+      transform: translate(3px, 3px);
+    }
+    &__link {
+      font-size: 1.2rem;
+      line-height: 96px;
+      color: #1F1534;
+      opacity: 0.5;
+    }
+    &__item {
+      text-align: center;
+      min-width: 40px;
+      margin-right: 30px;
+      &--active {
+        color: #4089ED;
+        opacity: 1;
+      }
+    }
+    @include responsive-page(desktop) {
+      width: 60%;
+      display: flex;
+      padding-top: 0;
+      flex-direction: row;
+      align-items: center;
+      &__list {
+        justify-content: flex-end;
+        display: flex;
+        width: 100%;
+        padding-right: 15%;
+      }
+      &__link {
+        line-height: 23px;
+      }
+    }
+  }
+  .menu-btn {
+    display: flex;
+    width: 30%;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    &__hamburger {
+      width: 30px;
+      height: 6px;
+      background-color: #4089ED;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(255,101,47,0.2);
+      transition: all .5s ease-in-out;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 6px;
+        background-color: #4089ED;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(255,101,47,0.2);
+        transition: all .5s ease-in-out;
+      }
+      &::before {
+        transform: translateY(-10px);
+      }
+      &::after {
+        transform: translateY(10px);
+      }
+    }
+    @include responsive-page(md) {
+      justify-content: flex-start;
+    }
+    @include responsive-page(desktop) {
+      display: none;
+    }
+  }
+  /* hamburger animation */
+  .menu-btn.open .menu-btn__hamburger{
+    transform: translateX(-50px);
+    background: transparent;
+    box-shadow: none;
+  }
+  .menu-btn.open .menu-btn__hamburger::before {
+    transform: rotate(45deg) translate(35px, -35px);
+  }
+  .menu-btn.open .menu-btn__hamburger::after {
+    transform: rotate(-45deg) translate(35px, 35px);
+  }
+}

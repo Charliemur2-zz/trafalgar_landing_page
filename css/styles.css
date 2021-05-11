@@ -156,6 +156,10 @@ ul, li {
   padding: 20px;
   /* hamburger animation */
 }
+.header__container {
+  width: 100%;
+  display: flex;
+}
 .header .logo {
   width: 70%;
   justify-content: center;

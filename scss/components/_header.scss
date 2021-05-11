@@ -3,6 +3,10 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px;
+  &__container {
+    width: 100%;
+    display: flex;
+  }
   .logo {
     width: 70%;
     justify-content: center;

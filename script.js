@@ -1,3 +1,4 @@
+const header = document.querySelector('.js-header');
 const menuBtn = document.querySelector('.js-menu-btn');
 const navBar = document.querySelector('.js-navbar');
 let menuOpen = false;
@@ -10,6 +11,21 @@ navItem.forEach(item => {
     this.classList.add('navbar__item--active');
   });
 });
+
+/* scrolled menu */
+window.onscroll = function() {
+  if(window.pageYOffset > 80) {
+    if(!scrolled) {
+      header.style.transform = 'translateY(-130px)';
+    }
+    setTimeout(function() {
+      header.style.transform = 'translate(0)';
+      scrolled = true;
+    }, 700)
+  } else {
+    scrolled = false;
+  }
+};
 
 menuBtn.addEventListener('click', () => {
   if (!menuOpen) {

@@ -45,8 +45,19 @@ menuBtn.addEventListener('click', () => {
 function disableScroll() {
   document.body.style.overflow = 'hidden';
   document.querySelector('html').scrollTop = window.scrollY;
-}
+};
 
 function enableScroll() {
   document.body.style.overflow = null;
-}
+};
+
+/* get vurrent year */
+window.addEventListener('load', (
+  function () {
+      document.querySelector('.js-current-year').appendChild(
+          document.createTextNode(
+              new Date().getFullYear()
+          )
+      );
+  }
+));

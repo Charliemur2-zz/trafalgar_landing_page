@@ -1,0 +1,109 @@
+.footer{
+  background: linear-gradient(183.41deg, #67C3F3 -8.57%, #5A98F2 82.96%);
+  width: 100%;
+  padding: 30px 0;
+  @include responsive-page(md) {
+    padding: 70px 0;
+    overflow: hidden;
+  }
+  @include responsive-page(desktop) {
+    padding: 118px 0;
+  }
+  &__dots {
+    position: absolute;
+    bottom: 42%;
+    left: -9%;
+    @include responsive-page(md){
+      bottom: -87px;
+      left: -20px;
+    }
+    @include responsive-page(desktop) {
+      bottom: -118px;
+      left: 0;
+    }
+  }
+  &__container {
+    @include responsive-page(md) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    @include responsive-page(desktop) {
+      padding: 0 190px;
+    }
+  }
+  &-logo {
+    text-align: center;
+    padding: 20px 0;
+    @include responsive-page(desktop) {
+      text-align: start;
+    }
+  }
+  &__info-text {
+    padding: 20px;
+    @include responsive-page(desktop) {
+      padding: 0 47px 0 0;
+    }
+  }
+  &__text {
+    text-align: center;
+    font-weight: 300;
+    font-size: 1.125rem;
+    line-height: 1.7rem;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    @include responsive-page(desktop) {
+      text-align: start;
+      padding-top: 22px;
+    }
+  }
+  .copyright {
+    padding: 20px;
+    text-align: center;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    color: #FFFFFF;
+    @include responsive-page(desktop) {
+      text-align: start;
+      padding: 31px 0 0 0;
+    }
+  }
+  &__box {
+    padding: 20px;
+    text-align: center;
+    @include responsive-page(md) {
+      width: 33%;
+      text-align: start;
+      padding-left: 86px;
+    }
+    @include responsive-page(desktop) {
+      width: 20%;
+      padding-left: 59px;
+    }
+  }
+  &__info {
+    @include responsive-page(md) {
+      width: 100%;
+      padding: 0 60px;
+    }
+    @include responsive-page(desktop) {
+      width: 40%;
+      padding: 0;
+    }
+    &-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      line-height: 3.75rem;
+      color: #FFFFFF;
+    }
+    &-link {
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 38px;
+      color: #FFFFFF;
+    }
+  }
+}
+.main {
+  height: 2000px;
+}
